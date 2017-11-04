@@ -89,7 +89,7 @@ def rowLayout(cropNum, cropSp, length):
     return dirtPatch
              
 def intSowSeeds(BM, Cv, bv):
-    """An initial basic feasiable solution for the given variables is calculated."""
+    """An initial basic feasible solution for the given variables is calculated."""
     cLeng = len(Cv) # The length of vector (Cv)
     gWidth = bv[-1] # The garden's width
     cropRows = BM[:-1]
@@ -115,12 +115,12 @@ def main():
     filename = raw_input("Enter vegetable information: ") 
     inputfile = open(filename, 'r')
     cSelected = zeros((0,1)) # The list of numbers associated with chosen vegetables.
-    fullMatx = ones((0, 5)) # All numeric data for produce goes in here.
+    fullMatx = ones((0, 5)) # All numeric data for the produce goes in here.
     for line in inputfile: # Here the names and the number of each veggie is
         # displayed so the user can choose what goes into the garden initially.
         dispdata = line.split(', ')
         for num in range(2, len(dispdata)): 
-            dispdata[num] = float(dispdata[num]) # Produce stats now become 
+            dispdata[num] = float(dispdata[num]) # Produce statistics now become 
             # floating-point data.
         print("%-16s%-2s" % (dispdata[0], dispdata[1]))
         fullMatx = vstack((fullMatx, dispdata[2:len(line)]))
